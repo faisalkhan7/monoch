@@ -11,15 +11,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Install Gradle
+      - name: Install Gradle and Build
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
           unzip -q gradle-8.5-bin.zip
-          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
-      - name: Generate wrapper
-        run: gradle wrapper
-      - name: Build APK
-        run: ./gradlew assembleDebug
+          ./gradle-8.5/bin/gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: MonoTrader-debug
