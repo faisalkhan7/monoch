@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MonoTrader"
+            android:textSize="28sp"
+            android:textColor="#E0E0E0"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtre monochrome pour MT5"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Toggle Button -->
+        <Button
+            android:id="@+id/btn_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Activer le filtre"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Opacity Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opacité du filtre"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plus élevé = couleurs plus atténuées"
+            android:textSize="12sp"
+            android:textColor="#777777"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <SeekBar
+                android:id="@+id/seek_opacity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="85"
+                android:progress="45" />
+
+            <TextView
+                android:id="@+id/tv_opacity_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="45%"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Anti-Flash Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anti-flash (amortisseur)"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Onde qui casse le clignotement des prix"
+            android:textSize="12sp"
+            android:textColor="#777777"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <SeekBar
+                android:id="@+id/seek_anti_flash"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="1000"
+                android:progress="200" />
+
+            <TextView
+                android:id="@+id/tv_anti_flash_value"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="200ms"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Presets anti-flash -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btn_preset_off"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="OFF"
+                android:textSize="11sp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#333344" />
+
+            <Button
+                android:id="@+id/btn_preset_scalp"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Scalp\n200ms"
+                android:textSize="11sp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#333344" />
+
+            <Button
+                android:id="@+id/btn_preset_swing"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Swing\n500ms"
+                android:textSize="11sp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#333344" />
+
+            <Button
+                android:id="@+id/btn_preset_zen"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Zen\n1000ms"
+                android:textSize="11sp"
+                android:backgroundTint="#333344" />
+        </LinearLayout>
+
+        <!-- Device Refresh Rate Tip -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taux de rafraichissement écran"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Réduire le Hz de la tablette réduit aussi le clignotement"
+            android:textSize="12sp"
+            android:textColor="#777777"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_open_display_settings"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Ouvrir les paramètres d'affichage (passer en 60Hz)"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#222244"
+            android:textColor="#AAAACC"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Position Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Position de l'overlay"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <RadioGroup
+            android:id="@+id/radio_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
+
+            <RadioButton
+                android:id="@+id/radio_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="◧  Moitié gauche (MT5 à gauche)"
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"
+                android:buttonTint="#888888"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radio_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="◨  Moitié droite (MT5 à droite)"
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"
+                android:buttonTint="#888888"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radio_full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="▣  Plein écran"
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"
+                android:buttonTint="#888888"
+                android:padding="8dp" />
+        </RadioGroup>
+
+        <!-- Info -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Astuce : Placez MT5 d'un côté en split-screen, TradingView de l'autre, puis activez le filtre uniquement sur le côté MT5."
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:lineSpacingExtra="4dp"
+            android:background="#111122"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>
